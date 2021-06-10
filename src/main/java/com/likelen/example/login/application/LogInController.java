@@ -13,8 +13,11 @@ import java.net.URI;
 @RestController
 public class LogInController {
 
-    @Autowired
-    UserService service;
+    final UserService service;
+
+    public LogInController(UserService service) {
+        this.service = service;
+    }
 
     @PostMapping(value = "/register")
     ResponseEntity<RegisterResponse> register(
