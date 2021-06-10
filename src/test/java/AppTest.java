@@ -1,6 +1,4 @@
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.security.*;
@@ -12,14 +10,7 @@ import java.security.spec.PKCS8EncodedKeySpec;
 import java.security.spec.X509EncodedKeySpec;
 import java.util.Base64;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 class AppTest {
-
-
-    public static void main(String[] args) {
-
-    }
 
     @BeforeAll
     static void beforeAll() throws NoSuchAlgorithmException, InvalidKeySpecException {
@@ -36,7 +27,6 @@ class AppTest {
         final KeyPair keyPair = generator.generateKeyPair();
 //        String s = Base64.getEncoder().encodeToString(keyPair.getPublic().getEncoded());
 //        System.out.println("keyPair.getPublic().getEncoded() | " + s);
-//
 //        String ss = Base64.getEncoder().encodeToString(keyPair.getPrivate().getEncoded());
 //        System.out.println("keyPair.getPrivate().getEncoded() | " + ss);
 
