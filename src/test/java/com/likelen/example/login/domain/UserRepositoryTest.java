@@ -25,4 +25,14 @@ class UserRepositoryTest {
         User find = repository.findUserById(id);
         assertThat(find).isEqualTo(save);
     }
+
+    @Test
+    void logInMethodTest() {
+        User user = new User(null, "Len", "joenggyu0@gmail.com", "1234");
+        User save = repository.save(user);
+
+        User find = repository.findByEmailAndPassword(save.getEmail(), save.getPassword());
+
+        assertThat(find).isEqualTo(save);
+    }
 }

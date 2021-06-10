@@ -1,5 +1,6 @@
 package com.likelen.example.login.domain;
 
+import com.likelen.example.login.domain.model.LoginRequest;
 import com.likelen.example.login.domain.model.RegisterRequest;
 import org.springframework.stereotype.Service;
 
@@ -19,5 +20,11 @@ public class UserService {
 
     public User findUser(Long userId) {
         return repository.findUserById(userId);
+    }
+
+    public User login(LoginRequest request) {
+        String email = request.getEmail();
+        String password = request.getPassword();
+        return repository.findByEmailAndPassword(email, password);
     }
 }

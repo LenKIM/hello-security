@@ -1,0 +1,10 @@
+package com.likelen.example.login.domain.model;
+
+import lombok.Data;
+
+@Data
+public class LoginRequest {
+
+    private final String email;
+    private final String password;
+}

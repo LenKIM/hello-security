@@ -2,6 +2,7 @@ package com.likelen.example.login.application;
 
 import com.likelen.example.login.domain.User;
 import com.likelen.example.login.domain.UserService;
+import com.likelen.example.login.domain.model.LoginRequest;
 import com.likelen.example.login.domain.model.RegisterRequest;
 import com.likelen.example.login.domain.model.RegisterResponse;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,4 +32,12 @@ public class LogInController {
         User register = service.findUser(userId);
         return ResponseEntity.ok(RegisterResponse.of(register));
     }
+
+    @PostMapping(value = "/login")
+    ResponseEntity<RegisterResponse> login(
+            @RequestBody LoginRequest request) {
+        User register = service.login(request);
+        return ResponseEntity.ok(RegisterResponse.of(register));
+    }
+
 }
