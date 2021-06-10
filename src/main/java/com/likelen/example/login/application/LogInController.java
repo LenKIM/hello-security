@@ -34,10 +34,11 @@ public class LogInController {
     }
 
     @PostMapping(value = "/login")
-    ResponseEntity<RegisterResponse> login(
+    ResponseEntity<String> login(
             @RequestBody LoginRequest request) {
-        User register = service.login(request);
-        return ResponseEntity.ok(RegisterResponse.of(register));
+        service.login(request);
+
+        return ResponseEntity.ok("");
     }
 
 }

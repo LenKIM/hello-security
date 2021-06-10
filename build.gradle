@@ -23,6 +23,10 @@ dependencies {
 
 
     runtimeOnly 'com.h2database:h2:1.4.199'
+
+//    implementation 'org.apache.shiro:shiro-core:1.7.1'
+    implementation 'org.apache.shiro:shiro-spring:1.7.1'
+
 }
 
 test {
